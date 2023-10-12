@@ -18,7 +18,7 @@ methods:{
   getApi() {
     axios.get(store.apiUrl)
     .then(res => {
-      store.cardsList = res.data;
+      store.cardsList = res.data.data;
       console.log(store.cardsList);
     })
     .catch(e => {
