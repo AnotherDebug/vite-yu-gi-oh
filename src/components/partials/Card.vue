@@ -1,16 +1,21 @@
 <script>
 export default {
-    name: 'Card'
+    name: 'Card',
+    props:{
+        name:String,
+        archetype:String,
+        image_url:String
+    }
 }
 </script>
 
 
 <template>
     <div class="card rounded-0">
-        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
+        <img :src="image_url" class="card-img-top" alt="...">
         <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-            <h4 class="card-title">"A Cell Breeding Device"</h4>
-            <h5 class="card-text">Alien</h5>
+            <h4 class="card-title">{{ name }}</h4>
+            <h5 class="card-text">{{ archetype }}</h5>
         </div>
     </div>
 </template>
