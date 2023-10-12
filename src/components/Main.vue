@@ -12,7 +12,13 @@ export default {
         }
     },
     computed:{
-        
+        foundCards() {
+            if(store.cardsList.length > 0){
+                return `Found ${store.cardsList.length} cards`;
+            }else {
+                return "No cards found";
+            }
+        }
     },
     mounted() {
         console.log(store.cardsList);
@@ -28,7 +34,7 @@ export default {
             <div class="row p-5">
 
                 <div class="found">
-                    <h5>Found</h5>
+                    <h5>{{ foundCards }}</h5>
                 </div>
 
                 <div class="col d-flex flex-wrap">
