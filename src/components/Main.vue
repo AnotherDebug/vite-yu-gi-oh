@@ -1,6 +1,10 @@
 <script>
+import Card from './partials/Card.vue';
 export default {
-    name: 'Main'
+    name: 'Main',
+    components: {
+        Card
+    }
 }
 </script>
 
@@ -17,104 +21,14 @@ export default {
 
                 <div class="col d-flex flex-wrap">
 
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-                    <div class="card rounded-0">
-                        <img src="https://images.ygoprodeck.com/images/cards/34541863.jpg" class="card-img-top" alt="...">
-                        <div class="card-body text-center d-flex flex-column justify-content-between" style="height: 10rem">
-                            <h4 class="card-title">"A Cell Breeding Device"</h4>
-                            <h5 class="card-text">Alien</h5>
-                        </div>
-                    </div>
-
-
-
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
+                    <Card />
 
                 </div>
             </div>
@@ -124,6 +38,7 @@ export default {
 
 
 <style lang="scss" scoped>
+
 @use '../scss/partials/variables' as *;
 
 main {
@@ -131,17 +46,6 @@ main {
 
     .row {
         background-color: $white-color;
-
-        .col {
-            .card {
-                width: calc(100% / 5 - 10px);
-                margin: 5px;
-
-                .card-body {
-                    background-color: $primary-color;
-                }
-            }
-        }
 
         .found {
             background-color: $black-color;
