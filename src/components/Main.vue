@@ -2,11 +2,13 @@
 import Card from './partials/Card.vue';
 import { store } from '../data/store';
 import FoundCards from './partials/FoundCards.vue';
+import SelectCard from './partials/SelectCard.vue';
 export default {
     name: 'Main',
     components: {
         Card,
-        FoundCards
+        FoundCards,
+        SelectCard
     },
     data() {
         return {
@@ -23,7 +25,9 @@ export default {
 <template>
     <main>
         <div class="container">
-            <h1>ciao</h1>
+
+            <SelectCard />
+            
             <div class="row p-5">
 
                 <FoundCards />
