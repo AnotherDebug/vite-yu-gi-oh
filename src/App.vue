@@ -22,6 +22,13 @@ methods:{
     .then(res => {
       store.cardsList = res.data.data;
       console.log(store.cardsList);
+      store.cardsList.forEach(type => {
+        console.log(type.archetype);
+        if(!store.archetypeList.includes(type.archetype)) {
+          store.archetypeList.push(type.archetype);
+          console.log(store.archetypeList);
+        }
+      })
     })
     .catch(e => {
       console.log(e);
@@ -38,7 +45,7 @@ mounted() {
 <template>
 
 <Header />
-<SelectCard />
+<SelectCard @selectedArch="getApi"/>
 <Main />
 
 </template>
