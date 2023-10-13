@@ -1,23 +1,16 @@
 <script>
 import Card from './partials/Card.vue';
 import { store } from '../data/store';
+import FoundCards from './partials/FoundCards.vue';
 export default {
     name: 'Main',
     components: {
-        Card
+        Card,
+        FoundCards
     },
     data() {
         return {
             store
-        }
-    },
-    computed:{
-        foundCards() {
-            if(store.cardsList.length > 0){
-                return `Found ${store.cardsList.length} cards`;
-            }else {
-                return "No cards found";
-            }
         }
     },
     mounted() {
@@ -33,9 +26,7 @@ export default {
             <h1>ciao</h1>
             <div class="row p-5">
 
-                <div class="found">
-                    <h5>{{ foundCards }}</h5>
-                </div>
+                <FoundCards />
 
                 <div class="col d-flex flex-wrap">
 
@@ -62,12 +53,6 @@ main {
 
     .row {
         background-color: $white-color;
-
-        .found {
-            background-color: $black-color;
-            color: $white-color;
-            padding: 10px;
-        }
     }
 }
 </style>
