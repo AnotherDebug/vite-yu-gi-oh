@@ -17,7 +17,7 @@ export default {
             <div class="col">
                 <select  style="width: 25%;" class="form-select ms-3 my-4" aria-label="select">
                     <option selected>Choose an Archetype</option>
-                    <option @click="$emit('selectedArch')" v-for="(type, index) in store.archetypeList" :key="index" >{{ type }}</option>
+                    <option @click="$emit('selectedArch')" v-for="(type, index) in store.archetypeList" :key="index" :value="type">{{ type }}</option>
                 </select>
             </div>
         </div>

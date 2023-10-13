@@ -13,7 +13,7 @@ components: {
 },
 data() {
   return{
-    store
+    store,
   }
 },
 methods:{
@@ -28,12 +28,13 @@ methods:{
           store.archetypeList.push(type.archetype);
           console.log(store.archetypeList);
         }
+        
       })
     })
     .catch(e => {
       console.log(e);
     })
-  }
+  },
 },
 mounted() {
   this.getApi();
@@ -45,7 +46,7 @@ mounted() {
 <template>
 
 <Header />
-<SelectCard @selectedArch="getApi"/>
+<SelectCard @selectedArch="filterCardsByArchetype"/>
 <Main />
 
 </template>
