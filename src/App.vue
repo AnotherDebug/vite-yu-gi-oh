@@ -18,7 +18,11 @@ data() {
 },
 methods:{
   getApi() {
-    axios.get(store.apiUrl)
+    axios.get(store.apiUrl, {
+      params:{
+        archetype: store.archetypeList
+      }
+    })
     .then(res => {
       store.cardsList = res.data.data;
       console.log(store.cardsList);
@@ -46,7 +50,7 @@ mounted() {
 <template>
 
 <Header />
-<SelectCard @selectedArch="filterCardsByArchetype"/>
+<SelectCard @selectedArch="getApi"/>
 <Main />
 
 </template>
