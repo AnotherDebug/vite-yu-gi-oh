@@ -12,9 +12,6 @@ export default {
         return {
             store
         }
-    },
-    mounted() {
-        console.log(store.cardsList);
     }
 }
 </script>
