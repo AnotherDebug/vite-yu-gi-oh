@@ -47,6 +47,7 @@ export default {
 
 main {
     background-color: $primary-color;
+    padding-bottom: 100px;
 
     .row {
         background-color: $white-color;
