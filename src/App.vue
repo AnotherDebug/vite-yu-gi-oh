@@ -5,59 +5,85 @@ import SelectCard from './components/SelectCard.vue';
 import { store } from './data/store';
 import axios from 'axios';
 export default {
-name: "App",
-components: {
-  Header,
-  Main,
-  SelectCard
-},
-data() {
-  return{
-    store,
-  }
-},
-methods:{
-  getApi() {
-    axios.get(store.apiUrl, {
-      params:{
-        archetype: store.archetypeList
-      }
-    })
-    .then(res => {
-      store.cardsList = res.data.data;
-      console.log(store.cardsList);
-      store.cardsList.forEach(type => {
-        console.log(type.archetype);
-        if(!store.archetypeList.includes(type.archetype)) {
-          store.archetypeList.push(type.archetype);
-          console.log(store.archetypeList);
-        }
-        
-      })
-    })
-    .catch(e => {
-      console.log(e);
-    })
+  name: "App",
+  components: {
+    Header,
+    Main,
+    SelectCard
   },
-},
-mounted() {
-  this.getApi();
-}
+  data() {
+    return {
+      store,
+    }
+  },
+
+  methods: {
+    getApi() {
+      // Se store.selectedArchetype è vuoto
+      if (!store.selectedArchetype) {
+        // Faccio la chiamata API senza il parametro "archetype"
+        axios.get(store.apiUrl)
+          .then(res => {
+            store.cardsList = res.data.data;
+            console.log(store.cardsList);
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      } else {
+        // Quando un archetipo è selezionato parte la chiamata con params
+        axios.get(store.apiUrl, {
+          params: {
+            archetype: store.selectedArchetype
+          }
+        })
+          .then(res => {
+            store.cardsList = res.data.data;
+            console.log(store.cardsList);
+          })
+          .catch(e => {
+            console.log(e);
+          });
+      }
+    }
+
+  },
+  watch: {
+    'store.selectedArchetype': 'getApi'
+  },
+  mounted() {
+    //1. Faccio una chiamata iniziale per ottenere l'elenco degli archetipi e le carte
+    axios.get(store.apiUrl)
+      .then(res => {
+        store.cardsList = res.data.data;
+        console.log(store.cardsList);
+        store.cardsList.forEach(type => {
+          console.log(type.archetype);
+          if (!store.archetypeList.includes(type.archetype)) {
+            //se archetypeList non include i valori di arch. me li pusha!
+            store.archetypeList.push(type.archetype);
+            console.log(store.archetypeList);
+          }
+        });
+        // Faccio la chiamata API iniziale con il valore predefinito di selectedArchetype
+        this.getApi();
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  }
+
 }
 </script>
 
 
 <template>
-
-<Header />
-<SelectCard @selectedArch="getApi"/>
-<Main />
-
+  <Header />
+  <SelectCard @selectedArch="getApi" />
+  <Main />
 </template>
 
 
 <style lang="scss">
-
 @use './scss/main.scss';
-
 </style>
