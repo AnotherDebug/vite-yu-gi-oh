@@ -4,12 +4,14 @@ import Main from './components/Main.vue';
 import SelectCard from './components/SelectCard.vue';
 import { store } from './data/store';
 import axios from 'axios';
+import Loader from './components/partials/Loader.vue';
 export default {
   name: "App",
   components: {
     Header,
     Main,
-    SelectCard
+    SelectCard,
+    Loader
   },
   data() {
     return {
@@ -80,7 +82,8 @@ export default {
 <template>
   <Header />
   <SelectCard @selectedArch="getApi" />
-  <Main />
+  <Loader v-if="store.isLoaded"/>
+  <Main v-else/>
 </template>
 
 
