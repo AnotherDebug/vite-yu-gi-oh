@@ -21,6 +21,7 @@ export default {
 
   methods: {
     getApi() {
+      store.isLoaded = true;
       // Se store.selectedArchetype è vuoto
       if (!store.selectedArchetype) {
         // Faccio la chiamata API senza il parametro "archetype"
@@ -28,6 +29,7 @@ export default {
           .then(res => {
             store.cardsList = res.data.data;
             console.log(store.cardsList);
+            //store.isLoaded = false;
           })
           .catch(e => {
             console.log(e);
@@ -42,6 +44,7 @@ export default {
           .then(res => {
             store.cardsList = res.data.data;
             console.log(store.cardsList);
+            //store.isLoaded = false;
           })
           .catch(e => {
             console.log(e);
