@@ -29,7 +29,7 @@ export default {
           .then(res => {
             store.cardsList = res.data.data;
             console.log(store.cardsList);
-            //store.isLoaded = false;
+            store.isLoaded = false;
           })
           .catch(e => {
             console.log(e);
@@ -44,7 +44,7 @@ export default {
           .then(res => {
             store.cardsList = res.data.data;
             console.log(store.cardsList);
-            //store.isLoaded = false;
+            store.isLoaded = false;
           })
           .catch(e => {
             console.log(e);
